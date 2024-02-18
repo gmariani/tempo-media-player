@@ -1,0 +1,45 @@
+<asx version="3.0">
+	<title>ASX Example Playlist</title>
+	<moreinfo href="http://msdn2.microsoft.com/en-us/library/ms910265.aspx"/>
+
+	<entry>
+		<title>Afraid of the dark</title>
+		<ref href="http://www.jeroenwijering.com/upload/afraid.flv"/>
+	</entry>
+
+	<entry>
+		<title>Sunshine up Ahead</title>
+		<author>Peter Jones</author>
+		<ref href="http://www.jeroenwijering.com/upload/peterjones_sunshine_lofi.mp3"/>
+		<moreinfo href="http://www.peterjonesmusic.net/"/>
+	</entry>
+
+	<entry>
+		<title>Aggressive Wallpaper</title>
+		<author>Jeroen Wijering</author>
+		<abstract>
+			This is an aggressive wallpaper for public spaces where you don't want 
+			people to linger around (eg. subway tunnels or parking lots). People 
+			feel offended by the aggressive wallpaper and make sure they get out 
+			of these places as soon as their business is done there.
+		</abstract>
+		<ref href="http://www.jeroenwijering.com/upload/behang.jpg"/>
+		<moreinfo href="http://www.jeroenwijering.com/?item=Aggressive_Wallpaper"/>
+		<duration value="12.5"/>
+	</entry>
+
+	<entry>
+		<title>ITV's Coronation Street</title>
+		<abstract>
+			This example features accessibility content 
+			(closed captions and a descriptive audiotrack).
+		</abstract>
+		<moreinfo href="http://www.jeroenwijering.com/?item=Making_Video_Accessible"/>
+		<ref href="http://www.jeroenwijering.com/upload/corrie.flv"/>
+		<param name="image" value="http://www.jeroenwijering.com/upload/corrie.jpg"/>
+		<param name="captions" value="http://www.jeroenwijering.com/upload/corrie.xml"/>
+		<param name="audio" value="http://www.jeroenwijering.com/upload/corrie.mp3"/>
+		<duration value="00:00:45"/>
+	</entry>
+
+</asx>
