@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Tempo</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src="swfobject.js"></script>
+</head>
+
+<body>
+	<h3>Tempo by Course Vector</h3>
+	<p>Version 2.0.1</p>
+	<h3>Example</h3>
+	<p>Here's a simple example of the <a href="http://blog.coursevector.com/?p=7">Tempo</a> embedded in a page.</p>
+	<div id="flashcontent">
+		<strong>You need to upgrade your Flash Player</strong><br>
+		This site requires atleast version 9.
+	</div>
+	<h3>Licensing</h3>
+	<p>Tempo is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons License</a>. It allows you to use, modify and redistribute the script for free for noncommercial purposes. For corporate use, please contact <a href="http://www.coursevector.com/">Course Vector</a> directly.</p>
+	<h3>Documentation</h3>
+	<p>Please visit <a href="http://labs.coursevector.com/wiki/index.php5?title=Tempo">here</a> for the most up to date documentation.</p>
+
+	<script type="text/javascript">
+		// <![CDATA[
+		var params = {};
+		params.scale = "noscale";
+		params.salign = "tl";
+		params.bgcolor = "#97C0E1";
+		params.allowScriptAccess = "sameDomain";
+		params.allowFullScreen = "true";
+		var attributes = {};
+		var flashvars = {};
+		flashvars.playlistURL = "demo.xspf";
+		flashvars.skinURL = "skins/DemoSkin.swf";
+		flashvars.enableJS = "false";
+		swfobject.embedSWF("Tempo.swf","flashcontent","550","400","9.0.0","",flashvars, params, attributes);
+		// ]]>
+	</script>
+</body>
+</html>
