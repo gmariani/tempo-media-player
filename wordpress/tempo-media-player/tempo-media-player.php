@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Tempo Media Player
-Plugin URI: hhttps://mariani.life
+Plugin URI: https://mariani.life
 Description: This is a wrapper for the Tempo media player
-Version: 1.0.1
+Version: 1.0.2
 Author: Gabriel Mariani
-Author URI: hhttps://mariani.life
+Author URI: https://mariani.life
 */
 
 if (!function_exists('trace')) {
@@ -126,6 +126,10 @@ function tempo_main_text()
             <td>Sets the width of the video player.</td>
         </tr>
         <tr>
+            <td><code>buffer = a number</code></td>
+            <td>Sets the number of seconds to buffer before playing.</td>
+        </tr>
+        <tr>
             <td><code>id = a unique id</code></td>
             <td>Sets the id of the SWF within the HTML. Set this if you want to reference via JavaScript.</td>
         </tr>
@@ -207,6 +211,7 @@ Available settings
 ------------------
 id = unique id
 autoplay = true | false
+buffer = 0
 loop = true | false
 muted = true | false
 controls = true | false
@@ -232,6 +237,7 @@ function tempo_shortcode($atts)
     $code .= 'width:"' . trim($atts['width']) . '",' . PHP_EOL;
     $code .= 'height:"' . trim($atts['height']) . '",' . PHP_EOL;
     if ($atts['autoplay']) $code .= 'autoplay:"' . trim($atts['autoplay']) . '",' . PHP_EOL;
+    if ($atts['buffer']) $code .= 'buffer:"' . trim($atts['buffer']) . '",' . PHP_EOL;
     if ($atts['loop']) $code .= 'loop:"' . trim($atts['loop']) . '",' . PHP_EOL;
     if ($atts['muted']) $code .= 'muted:"' . trim($atts['muted']) . '",' . PHP_EOL;
     if ($atts['controls']) $code .= 'controls:"' . trim($atts['controls']) . '",' . PHP_EOL;
@@ -249,7 +255,7 @@ function tempo_shortcode($atts)
     $code .= 'id: "' . $div_id . '",' . PHP_EOL;
     $code .= 'name: "' . $div_id . '"' . PHP_EOL;
     $code .= '};' . PHP_EOL;
-    $code .= 'swfobject.embedSWF("' . plugins_url('/Tempo.swf', __FILE__) . '", "' . $div_id . '", "' . trim($atts['width']) . '", "' . trim($atts['height']) . '", "9.0.115", false, flashvars, params, attributes);' . PHP_EOL;
+    $code .= 'swfobject.embedSWF("' . plugins_url('/tempo.swf', __FILE__) . '", "' . $div_id . '", "' . trim($atts['width']) . '", "' . trim($atts['height']) . '", "9.0.115", false, flashvars, params, attributes);' . PHP_EOL;
     $code .= '// ]]> -->' . PHP_EOL;
     $code .= '</script>';
 

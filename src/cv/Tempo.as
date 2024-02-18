@@ -196,6 +196,8 @@ package cv {
 					// Flash
 					aCb("setStreamHost", 			function(str:String):void { streamhost = str; } );
 					aCb("getStreamHost", 			function():String { return streamhost; } );
+					aCb("setBuffer", 			function(n:int):void { tempo.buffer = n; } );
+					aCb("getBuffer", 			function():int { return tempo.buffer; } );
 					
 					// Fullscreen API
 					aCb("requestFullscreen", 		toggleFullscreen ); // Method

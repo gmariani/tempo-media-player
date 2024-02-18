@@ -50,6 +50,10 @@ package cv.interfaces {
 		/** @private **/
 		function set autoPlay(b:Boolean):void;
 		
+		function get buffer():int;
+		/** @private **/
+		function set buffer(n:int):void;
+		
 		function get currentSrc():String;
 		
 		/** 

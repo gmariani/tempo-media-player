@@ -276,6 +276,7 @@ package cv {
 		
 		// Private
 		protected var _autoPlay:Boolean = false;
+		protected var _buffer:int = 0;
 		protected var _cM:IMediaPlayer;
 		protected var _players:Array = new Array();
 		protected var _loop:Boolean = false;
@@ -311,6 +312,13 @@ package cv {
 		public function set autoPlay(b:Boolean):void {
 			_autoPlay = b;
 			setPlayersProp("autoPlay", _autoPlay);
+		}
+		
+		public function get buffer():int { return _buffer; }
+		/** @private **/
+		public function set buffer(n:int):void {
+			_buffer = n;
+			setPlayersProp("buffer", _buffer);
 		}
 		
 		public function get currentSrc():String { return _cM ? _cM.currentSrc : ''; }
