@@ -27,9 +27,9 @@
 * OTHER DEALINGS IN THE SOFTWARE.
 **/
 
-package cv.interfaces {
+package com.coursevector.tempo.interfaces {
 	
-	import cv.data.MediaError;
+	import com.coursevector.data.MediaError;
 	import flash.events.IEventDispatcher;
 	
 	/**
@@ -49,10 +49,6 @@ package cv.interfaces {
 		function get autoPlay():Boolean;
 		/** @private **/
 		function set autoPlay(b:Boolean):void;
-		
-		function get buffer():int;
-		/** @private **/
-		function set buffer(n:int):void;
 		
 		function get currentSrc():String;
 		

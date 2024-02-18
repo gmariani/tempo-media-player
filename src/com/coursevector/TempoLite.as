@@ -29,15 +29,15 @@
 
 package cv {
 
-	import cv.data.MediaError;
-	import cv.data.NetworkState;
-	import cv.data.ReadyState;
-	import cv.events.LoadEvent;
-	import cv.events.MetaDataEvent;
-	import cv.events.PlayProgressEvent;
-	import cv.events.TempoEvent;
-	import cv.interfaces.IMediaPlayer;
-	import cv.util.MathUtil;
+	import com.coursevector.data.MediaError;
+	import com.coursevector.data.NetworkState;
+	import com.coursevector.data.ReadyState;
+	import com.coursevector.events.LoadEvent;
+	import com.coursevector.events.MetaDataEvent;
+	import com.coursevector.events.PlayProgressEvent;
+	import com.coursevector.events.TempoEvent;
+	import com.coursevector.interfaces.IMediaPlayer;
+	import com.coursevector.util.MathUtil;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.net.URLLoader;
@@ -57,35 +57,35 @@ package cv {
 	/**
 	 * Dispatched everytime a cue point is encountered
 	 *
-	 * @eventType cv.events.MetaDataEvent.CUE_POINT
+	 * @eventType com.coursevector.events.MetaDataEvent.CUE_POINT
 	 */
-	[Event(name = "cuePoint", type = "cv.events.MetaDataEvent")]
+	[Event(name = "cuePoint", type = "com.coursevector.events.MetaDataEvent")]
 	
 	/**
 	 * Dispatched as a media file has completed loading
 	 *
-	 * @eventType cv.events.LoadEvent.LOAD_COMPLETE
+	 * @eventType com.coursevector.events.LoadEvent.LOAD_COMPLETE
 	 */
-	[Event(name = "loadComplete", type = "cv.events.LoadEvent")]
+	[Event(name = "loadComplete", type = "com.coursevector.events.LoadEvent")]
 	
 	/**
 	 * Dispatched as a media file is loaded
 	 *
-	 * @eventType cv.events.LoadEvent.LOAD_PROGRESS
+	 * @eventType com.coursevector.events.LoadEvent.LOAD_PROGRESS
 	 */
 	[Event(name = "loadProgress", type = "flash.events.ProgressEvent")]
 	
 	/**
 	 * Dispatched as a media file begins loading
 	 *
-	 * @eventType cv.events.LoadEvent.LOAD_START
+	 * @eventType com.coursevector.events.LoadEvent.LOAD_START
 	 */
-	[Event(name = "loadStart", type = "cv.events.LoadEvent")]
+	[Event(name = "loadStart", type = "com.coursevector.events.LoadEvent")]
 	
 	/**
 	 * Dispatched after Tempo has begun loading the next item, also at the end of an item playing
 	 *
-	 * @eventType cv.TempoLite.NEXT
+	 * @eventType com.coursevector.TempoLite.NEXT
 	 */
 	[Event(name = "next", type = "flash.events.Event")]
 	
@@ -99,49 +99,49 @@ package cv {
 	/**
 	 * Dispatched as a media file is playing
 	 *
-	 * @eventType cv.events.PlayProgressEvent.PLAY_PROGRESS
+	 * @eventType com.coursevector.events.PlayProgressEvent.PLAY_PROGRESS
 	 */
-	[Event(name="playProgress", type="cv.events.PlayProgressEvent")]
+	[Event(name="playProgress", type="com.coursevector.events.PlayProgressEvent")]
 	
 	/**
 	 * Dispatched once as a media file first begins to play
 	 *
-	 * @eventType cv.TempoLite.PLAY_START
+	 * @eventType com.coursevector.TempoLite.PLAY_START
 	 */
 	[Event(name = "playStart", type = "flash.events.Event")]
 	
 	/**
 	 * Dispatched after Tempo has begun loading the previous item
 	 *
-	 * @eventType cv.TempoLite.PREVIOUS
+	 * @eventType com.coursevector.TempoLite.PREVIOUS
 	 */
 	[Event(name = "previous", type = "flash.events.Event")]
 	
 	/**
 	 * Dispatched from the PlayListManager when ever an item is removed, or updated, or the entire list is updated
 	 *
-	 * @eventType cv.TempoLite.REFRESH_PLAYLIST
+	 * @eventType com.coursevector.TempoLite.REFRESH_PLAYLIST
 	 */
 	[Event(name = "refreshPlaylist", type = "flash.events.Event")]
 	
 	/**
 	 * Dispatched whenever the isPlaying, isReadyToPlay or isPause properties have changed.
 	 *
-	 * @eventType cv.events.PlayProgressEvent.STATUS
+	 * @eventType com.coursevector.events.PlayProgressEvent.STATUS
 	 */
 	[Event(name = "status", type = "flash.events.PlayProgressEvent")]
 	
 	/**
 	 * Dispatched as metadata is receieved from a player
 	 *
-	 * @eventType cv.events.MetaDataEvent.METADATA
+	 * @eventType com.coursevector.events.MetaDataEvent.METADATA
 	 */
-	[Event(name = "metadata", type = "cv.events.MetaDataEvent")]
+	[Event(name = "metadata", type = "com.coursevector.events.MetaDataEvent")]
 	
 	/**
 	 * Dispatched whenever the volume has changed
 	 *
-	 * @eventType cv.TempoLite.VOLUME
+	 * @eventType com.coursevector.TempoLite.VOLUME
 	 */
 	[Event(name = "volume", type = "flash.events.Event")]
 	
@@ -216,16 +216,16 @@ package cv {
 	 * @example This is the same code as in the TempoLiteDemo.fla
 	 * <br/><br/>
 	 * <listing version="3.0">
-	 * import cv.TempoLite;
-	 * import cv.media.SoundPlayer;
-	 * import cv.media.NetStreamPlayer;
-	 * import cv.media.RTMPPlayer;
-	 * import cv.media.ImagePlayer;
+	 * import com.coursevector.TempoLite;
+	 * import com.coursevector.media.SoundPlayer;
+	 * import com.coursevector.media.NetStreamPlayer;
+	 * import com.coursevector.media.RTMPPlayer;
+	 * import com.coursevector.media.ImagePlayer;
 	 * import flash.events.Event;
-	 * import cv.events.LoadEvent;
-	 * import cv.events.PlayProgressEvent;
-	 * import cv.events.MetaDataEvent;
-	 * import cv.formats.*;
+	 * import com.coursevector.events.LoadEvent;
+	 * import com.coursevector.events.PlayProgressEvent;
+	 * import com.coursevector.events.MetaDataEvent;
+	 * import com.coursevector.formats.*;
 	 * 
 	 * var tempo:TempoLite = new TempoLite(null, [ASX, ATOM, B4S, M3U, PLS, XSPF]);
 	 * tempo.debug = true;
@@ -276,7 +276,6 @@ package cv {
 		
 		// Private
 		protected var _autoPlay:Boolean = false;
-		protected var _buffer:int = 0;
 		protected var _cM:IMediaPlayer;
 		protected var _players:Array = new Array();
 		protected var _loop:Boolean = false;
@@ -312,13 +311,6 @@ package cv {
 		public function set autoPlay(b:Boolean):void {
 			_autoPlay = b;
 			setPlayersProp("autoPlay", _autoPlay);
-		}
-		
-		public function get buffer():int { return _buffer; }
-		/** @private **/
-		public function set buffer(n:int):void {
-			_buffer = n;
-			setPlayersProp("buffer", _buffer);
 		}
 		
 		public function get currentSrc():String { return _cM ? _cM.currentSrc : ''; }

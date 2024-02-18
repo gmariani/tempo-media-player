@@ -1,5 +1,5 @@
 
-package cv.util {
+package com.coursevector.util {
 
 	import flash.geom.Point;
 	

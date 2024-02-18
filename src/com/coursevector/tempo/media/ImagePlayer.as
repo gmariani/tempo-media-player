@@ -27,12 +27,12 @@
 * OTHER DEALINGS IN THE SOFTWARE.
 **/
 
-package cv.media {
+package com.coursevector.media {
 	
-	import cv.events.LoadEvent;
-	import cv.events.MetaDataEvent;
-	import cv.events.PlayProgressEvent;
-	import cv.interfaces.IMediaPlayer;
+	import com.coursevector.events.LoadEvent;
+	import com.coursevector.events.MetaDataEvent;
+	import com.coursevector.events.PlayProgressEvent;
+	import com.coursevector.interfaces.IMediaPlayer;
 	import flash.display.Loader;
 	import flash.display.Sprite;
 	import flash.errors.IOError;
@@ -52,56 +52,56 @@ package cv.media {
 	/**
 	 * Dispatched when the media file has completed loading
 	 *
-	 * @eventType cv.events.LoadEvent.LOAD_COMPLETE
+	 * @eventType com.coursevector.events.LoadEvent.LOAD_COMPLETE
 	 */
-	[Event(name = "loadComplete", type = "cv.events.LoadEvent")]
+	[Event(name = "loadComplete", type = "com.coursevector.events.LoadEvent")]
 	
 	/**
 	 * Dispatched as a media file is loaded
 	 *
-	 * @eventType cv.events.LoadEvent.LOAD_PROGRESS
+	 * @eventType com.coursevector.events.LoadEvent.LOAD_PROGRESS
 	 */
 	[Event(name = "loadProgress", type = "flash.events.ProgressEvent")]
 	
 	/**
 	 * Dispatched as a media file begins loading
 	 *
-	 * @eventType cv.event.LoadEvent.LOAD_START
+	 * @eventType com.coursevector.event.LoadEvent.LOAD_START
 	 */
-	[Event(name = "loadStart", type = "cv.events.LoadEvent")]
+	[Event(name = "loadStart", type = "com.coursevector.events.LoadEvent")]
 	
 	/**
 	 * Dispatched after images loads. Contains height and width of image.
 	 *
-	 * @eventType cv.events.MetaDataEvent.METADATA
+	 * @eventType com.coursevector.events.MetaDataEvent.METADATA
 	 */
-	[Event(name = "metadata", type = "cv.events.MetaDataEvent")]
+	[Event(name = "metadata", type = "com.coursevector.events.MetaDataEvent")]
 	
 	/**
 	 * Dispatched as a media file finishes playing
 	 *
-	 * @eventType cv.events.PlayProgressEvent.PLAY_COMPLETE
+	 * @eventType com.coursevector.events.PlayProgressEvent.PLAY_COMPLETE
 	 */
-	[Event(name = "playComplete", type = "cv.events.PlayProgressEvent")]
+	[Event(name = "playComplete", type = "com.coursevector.events.PlayProgressEvent")]
 	
 	/**
 	 * Dispatched as a media file is playing
 	 *
-	 * @eventType cv.events.PlayProgressEvent.PLAY_PROGRESS
+	 * @eventType com.coursevector.events.PlayProgressEvent.PLAY_PROGRESS
 	 */
-	[Event(name="playProgress", type="cv.events.PlayProgressEvent")]
+	[Event(name="playProgress", type="com.coursevector.events.PlayProgressEvent")]
 	
 	/**
 	 * Dispatched once as a media file first begins to play
 	 *
-	 * @eventType cv.events.PlayProgressEvent.PLAY_START
+	 * @eventType com.coursevector.events.PlayProgressEvent.PLAY_START
 	 */
-	[Event(name = "playStart", type = "cv.events.PlayProgressEvent")]
+	[Event(name = "playStart", type = "com.coursevector.events.PlayProgressEvent")]
 	
 	/**
 	 * Dispatched when status has been updated.
 	 *
-	 * @eventType cv.events.PlayProgressEvent.STATUS
+	 * @eventType com.coursevector.events.PlayProgressEvent.STATUS
 	 */
 	[Event(name = "status", type = "flash.events.Event")]
 
@@ -286,8 +286,8 @@ package cv.media {
 		 * 
 		 * @param s	The url of the file to be loaded
 		 * 
-		 * @see cv.events.LoadEvent.LOAD_START
-		 * @see cv.events.PlayProgressEvent.STATUS
+		 * @see com.coursevector.events.LoadEvent.LOAD_START
+		 * @see com.coursevector.events.PlayProgressEvent.STATUS
 		 */
 		public function load(item:*):void {
 			var s:String = item as String;
@@ -321,8 +321,8 @@ package cv.media {
 		 * @default true
 		 * @param b	Whether to pause or toggle it off
 		 * 
-		 * @see cv.events.PlayProgressEvent.STATUS
-		 * @see cv.events.PlayProgressEvent.PLAY_PROGRESS
+		 * @see com.coursevector.events.PlayProgressEvent.STATUS
+		 * @see com.coursevector.events.PlayProgressEvent.PLAY_PROGRESS
 		 */
 		public function pause(b:Boolean = true):void {
 			_paused = b;
@@ -371,7 +371,7 @@ package cv.media {
 		 * 
 		 * @param n	Seconds into the audio to seek to
 		 * 
-		 * @see cv.events.PlayProgressEvent.PLAY_PROGRESS
+		 * @see com.coursevector.events.PlayProgressEvent.PLAY_PROGRESS
 		 */
 		public function seek(time:*):void {
 			var n:Number = Math.max(0, Math.min(timeTotal, Number(time) * 1000));
@@ -389,7 +389,7 @@ package cv.media {
 		 * 
 		 * @param n	Percent to seek to
 		 * 
-		 * @see cv.events.PlayProgressEvent.PLAY_PROGRESS
+		 * @see com.coursevector.events.PlayProgressEvent.PLAY_PROGRESS
 		 */
 		public function seekPercent(n:Number):void {
 			seek((n * timeTotal) / 1000);
@@ -409,7 +409,7 @@ package cv.media {
 		/**
 		 * Unloads the image and resets the metadata.
 		 * 
-		 * @see cv.events.PlayProgressEvent.STATUS
+		 * @see com.coursevector.events.PlayProgressEvent.STATUS
 		 */
 		public function unload():void {
 			if(ldr.contentLoaderInfo.bytesLoaded != ldr.contentLoaderInfo.bytesTotal) {

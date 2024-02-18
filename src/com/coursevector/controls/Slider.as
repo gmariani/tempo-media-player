@@ -1,5 +1,5 @@
 
-package cv.controls {
+package com.coursevector.controls {
 	
 	import flash.display.MovieClip;
 	import flash.display.SimpleButton;
@@ -13,7 +13,7 @@ package cv.controls {
 	import fl.events.SliderEventClickTarget;
 	import fl.events.InteractionInputType;
 	
-	import cv.util.MathUtil;
+	import com.coursevector.util.MathUtil;
 	
 	public class Slider extends MovieClip {
 		
