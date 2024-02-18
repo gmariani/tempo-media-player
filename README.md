@@ -14,6 +14,9 @@ This is a list of other known Flash media players currently out. While some medi
 - MC Altair 0.8 : 33kb (Single file, no playlist)
 - Tempo : 25kb
 
+## Demo
+[View Demo](https://mariani.life/projects/tempo/)
+
 # Usage
 ## Item Object
 An item object is used for handling a single item. You pass an item object to add audio or video to the play list. When you try to retrieve audio or video from the play list, it is returned as an item object. Below is the format of an item object :
@@ -47,14 +50,14 @@ You can pass the following playlist file types to Tempo. For each file type (if 
   - `<title>` = Title
   - `<ref>` or `<base>` = URL
   - `<duration>` = Length
-  - Example
+  - [Example](/sample-playlists/asx_example.xml)
 - XSPF
   - `<title>` = Title
   - `<location>` = URL
   - `<duration>` = Length
-  - Example
+  - [Example](/sample-playlists/xspf_example.xml)
 - M3U
-  - Example
+  - [Example](/sample-playlists/m3u_example.m3u)
 - PLS
   - `<title>` = Title
   - `<media:group><media:content url="value">` = URL
